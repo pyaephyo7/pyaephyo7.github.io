@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project: Solar-Powered EV Charging Station - Pyae Phyo Wai</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-dark: #020617; /* Slate 950 */
+            --text-main: #94a3b8; /* Slate 400 */
+            --text-head: #f1f5f9; /* Slate 100 */
+            --accent: #6366f1; /* Indigo 500 */
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+        }
+
+        .content-section {
+            @apply bg-slate-900/40 border border-slate-800 rounded-2xl p-8 mb-8;
+        }
+
+        .content-section h2 {
+            @apply text-3xl font-bold text-white mb-4;
+        }
+
+        .content-section h3 {
+            @apply text-xl font-bold text-indigo-400 mb-3 mt-6;
+        }
+
+        .stat-card {
+            @apply bg-slate-800/50 p-6 rounded-lg text-center;
+        }
+
+        .stat-value {
+            @apply text-4xl font-extrabold text-white;
+        }
+
+        .stat-label {
+            @apply text-sm font-medium text-slate-400 uppercase tracking-wider mt-1;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <main class="container mx-auto px-6 py-12 md:py-20">
+
+        <header class="text-center mb-16">
+            <a href="index.html" class="text-indigo-400 hover:text-indigo-300 transition-colors mb-4 inline-block">&larr; Back to Portfolio</a>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight">
+                Solar-Powered EV Charging Station
+            </h1>
+            <p class="mt-4 text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto">
+                A high-fidelity simulation and analysis of a solar-powered EV charging station with integrated battery backup and real-time monitoring.
+            </p>
+        </header>
+
+        <section class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            <div class="stat-card">
+                <p class="stat-value">4.4 kW</p>
+                <p class="stat-label">PV Array Power</p>
+            </div>
+            <div class="stat-card">
+                <p class="stat-value">95%</p>
+                <p class="stat-label">Peak Efficiency</p>
+            </div>
+            <div class="stat-card">
+                <p class="stat-value">400V</p>
+                <p class="stat-label">System Voltage</p>
+            </div>
+            <div class="stat-card">
+                <p class="stat-value">Pi 5</p>
+                <p class="stat-label">Real-Time Monitoring</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Project Overview</h2>
+            <p class="text-lg">
+                This project addresses the need for sustainable transportation infrastructure by designing, modeling, and simulating a solar-powered electric vehicle (EV) charging station. The system integrates a photovoltaic (PV) array with a battery backup to ensure reliable, off-grid charging capabilities. [cite_start]The primary aim was to develop a high-fidelity Simulink model to evaluate the system's performance, optimize energy management, and demonstrate practical real-time monitoring using a Raspberry Pi 5. The findings validate the system's potential for sustainable EV charging and offer a scalable solution for integrating renewable energy into transportation. [cite: 6, 10, 43]
+            </p>
+        </section>
+        
+        <section class="content-section">
+            <h2>System Design & Components</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3>Core Components</h3>
+                    <ul class="list-disc list-inside space-y-2 text-lg">
+                        [cite_start]<li><strong>Photovoltaic Array:</strong> A 4.4 kW array designed to be the primary power source[cite: 7].</li>
+                        [cite_start]<li><strong>Boost Converter:</strong> Utilizes a Perturb and Observe (P&O) MPPT algorithm to maximize power extraction from the PV array[cite: 7].</li>
+                        [cite_start]<li><strong>Battery Storage:</strong> Includes a main 400V EV battery and a 400V backup lithium-ion battery to ensure continuous operation[cite: 7].</li>
+                        [cite_start]<li><strong>Diode Switching:</strong> Employs a simple and effective diode-based mechanism for automatic power flow control between the PV array, backup battery, and EV battery[cite: 7].</li>
+                        [cite_start]<li><strong>SOC Estimation:</strong> A coulomb counting method is implemented to accurately estimate the State of Charge (SOC) of the batteries[cite: 7, 44].</li>
+                        [cite_start]<li><strong>Real-Time Monitoring:</strong> A Raspberry Pi 5 is integrated for real-time data logging and visualization of system parameters via TCP/IP[cite: 7, 49].</li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="https://placehold.co/600x400/0f172a/94a3b8?text=System+Simulink+Model+(Fig+4.1)" alt="Simulink Model Diagram" class="rounded-lg shadow-lg mt-4">
+                    <p class="text-center text-sm mt-2 text-slate-400">Figure 1: High-level Simulink model of the charging station.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Simulation & Scenarios</h2>
+            <p class="text-lg mb-6">
+                [cite_start]A high-fidelity model was developed in Simulink using a fixed discrete solver with a 1µs time step to accurately capture system dynamics[cite: 8]. To rigorously test the design's robustness, five distinct environmental scenarios were simulated.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                 <div class="bg-slate-800 p-4 rounded-lg">
+                    <h4 class="font-bold text-white">1. Sunny Day (Base)</h4>
+                    [cite_start]<p>Ideal conditions (1000 W/m², 25°C) to test peak performance and efficiency[cite: 9, 295].</p>
+                </div>
+                <div class="bg-slate-800 p-4 rounded-lg">
+                    <h4 class="font-bold text-white">2. Low Irradiance</h4>
+                    [cite_start]<p>Cloudy conditions (300 W/m²) to evaluate the backup battery's contribution[cite: 9, 295].</p>
+                </div>
+                <div class="bg-slate-800 p-4 rounded-lg">
+                    <h4 class="font-bold text-white">3. High Temperature</h4>
+                    [cite_start]<p>Hot conditions (45°C) to assess performance under thermal stress[cite: 9, 295].</p>
+                </div>
+                <div class="bg-slate-800 p-4 rounded-lg">
+                    <h4 class="font-bold text-white">4. Freezing Conditions</h4>
+                    [cite_start]<p>Cold temperatures (-5°C) without backup power to test PV-only operation[cite: 9, 295].</p>
+                </div>
+                 <div class="bg-slate-800 p-4 rounded-lg">
+                    <h4 class="font-bold text-white">5. No Solar Input</h4>
+                    [cite_start]<p>Tests complete reliance on the backup battery during nighttime[cite: 9, 295].</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="content-section">
+            <h2>Key Findings & Results</h2>
+             <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <p class="text-lg mb-4">
+                        The simulations confirmed the system's robust performance across all scenarios. [cite_start]System efficiency ranged from **75%** (backup only) to a peak of **95%** under ideal sunny conditions[cite: 9, 365].
+                    </p>
+                    <ul class="list-disc list-inside space-y-2 text-lg">
+                        [cite_start]<li>The P&O MPPT algorithm effectively tracked the maximum power point, optimizing energy extraction[cite: 339, 379].</li>
+                        [cite_start]<li>The passive diode switching mechanism provided seamless transitions between the solar array and backup battery[cite: 342].</li>
+                        [cite_start]<li>The coulomb counting method for SOC estimation proved reliable, with errors between **2-5%**[cite: 9, 383].</li>
+                        [cite_start]<li>Real-time monitoring via the Raspberry Pi 5 was successfully implemented, validating the simulation results with live data logging[cite: 381].</li>
+                    </ul>
+                </div>
+                <div>
+                     <img src="https://placehold.co/600x400/0f172a/94a3b8?text=Overall+Efficiency+Graph+(Fig+5.6)" alt="Overall Efficiency Graph" class="rounded-lg shadow-lg mt-4">
+                    <p class="text-center text-sm mt-2 text-slate-400">Figure 2: Overall system efficiency across the five test scenarios.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center mt-16">
+            <a href="index.html" class="btn btn-secondary bg-slate-800/50 border border-slate-700 text-white hover:bg-slate-700/80">&larr; Return to Main Portfolio</a>
+        </footer>
+
+    </main>
+
+</body>
+</html>
