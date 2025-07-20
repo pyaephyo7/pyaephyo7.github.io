@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Dossier: Smart Conveyor Control System</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom Professional & Readable Styles (Light Theme) -->
+    <style>
+        :root {
+            --bg-main: #FFFFFF;      /* White background */
+            --bg-card: #F9FAFB;     /* Very light grey for cards */
+            --text-main: #374151;    /* Dark grey for body text (gray-700) */
+            --text-head: #111827;    /* Near-black for headings (gray-900) */
+            --accent: #059669;       /* A professional, darker green (emerald-600) */
+            --border-color: #E5E7EB; /* Light grey for borders (gray-200) */
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+        }
+
+        .section-title { @apply text-3xl sm:text-4xl font-bold text-gray-900 mb-4; }
+
+        .card {
+            @apply bg-white border border-gray-200/80 rounded-2xl transition-all duration-300 p-8 shadow-sm hover:shadow-xl hover:border-gray-300;
+        }
+        
+        .stat-card {
+            @apply bg-white border border-gray-200/80 rounded-2xl p-6 text-center transform transition-transform hover:-translate-y-2 hover:shadow-2xl;
+        }
+        .stat-value { 
+            color: var(--text-head);
+            @apply text-4xl font-extrabold; 
+        }
+        .stat-label { 
+            color: #6B7280; /* gray-500 */
+            @apply text-sm font-medium uppercase tracking-wider mt-1; 
+        }
+
+        .accent-text {
+            color: var(--accent);
+        }
+
+        /* Animation on scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Back Button -->
+    <a href="index.html" class="fixed top-6 left-6 z-50 flex items-center space-x-2 bg-white/80 backdrop-blur-lg border border-gray-200 text-gray-700 px-4 py-2 rounded-full hover:bg-gray-50 hover:shadow-md transition-all">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+        <span>Back to Portfolio</span>
+    </a>
+
+    <main class="container mx-auto px-6">
+
+        <!-- Project Header -->
+        <header class="text-center py-24 md:py-32">
+            <p class="accent-text font-semibold mb-2">Project Dossier</p>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-gray-900 leading-tight">
+                Smart Conveyor Control System
+            </h1>
+            <p class="mt-6 text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
+                A real-time embedded system for automated product processing using FreeRTOS on a dual-core ESP32.
+            </p>
+        </header>
+
+        <!-- Key Metrics Section -->
+        <section class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
+            <div class="stat-card reveal"><div class="flex justify-center mb-3"><svg class="w-8 h-8 accent-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" /></svg></div><p class="stat-value">ESP32</p><p class="stat-label">Platform</p></div>
+            <div class="stat-card reveal" style="transition-delay: 100ms;"><div class="flex justify-center mb-3"><svg class="w-8 h-8 accent-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-1.621-1.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" /></svg></div><p class="stat-value">FreeRTOS</p><p class="stat-label">Operating System</p></div>
+            <div class="stat-card reveal" style="transition-delay: 200ms;"><div class="flex justify-center mb-3"><svg class="w-8 h-8 accent-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" /></svg></div><p class="stat-value">FSM</p><p class="stat-label">Core Architecture</p></div>
+            <div class="stat-card reveal" style="transition-delay: 300ms;"><div class="flex justify-center mb-3"><svg class="w-8 h-8 accent-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg></div><p class="stat-value">Dual-Core</p><p class="stat-label">Processing</p></div>
+        </section>
+
+        <!-- Main Content using STAR Method -->
+        <div class="space-y-12">
+            
+            <!-- Situation & Task -->
+            <div class="card reveal">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Situation & Task</h2>
+                <p class="text-lg mb-4">Modern manufacturing requires automated systems that are not only fast but also reliable and deterministic. The task was to design and implement a real-time embedded control system for a dual-belt conveyor. The system needed to process products by measuring length and weight, reading barcodes, and making accept/reject decisions, all while handling multiple products concurrently and providing real-time statistical feedback.</p>
+                <h3 class="text-2xl font-bold text-gray-900 mt-6 mb-3">My Role & Responsibilities:</h3>
+                <p class="text-lg">As the sole developer, I was responsible for the complete system design and implementation. This involved architecting the software on FreeRTOS, distributing tasks across the ESP32's dual cores, designing the Finite State Machine for product tracking, managing memory and resources with semaphores and queues, and developing a comprehensive testing strategy to validate performance.</p>
+            </div>
+
+            <!-- Action -->
+            <div class="card reveal">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Action</h2>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <p class="text-lg mb-6">I implemented a robust, multi-tasking architecture to meet the real-time requirements:</p>
+                        <div class="space-y-6 border-l-2 pl-6" style="border-color: var(--border-color);">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">1. Dual-Core Task Distribution</h3>
+                                <p>I leveraged the ESP32's dual cores by dedicating Core 1 to high-priority, low-latency sensor interrupt handling. Core 0 was assigned to product processing, monitoring, and user command tasks, preventing resource contention and ensuring deterministic performance.</p>
+                            </div>
+                             <div>
+                                <h3 class="text-xl font-bold text-gray-900">2. Finite State Machine (FSM)</h3>
+                                <p>I modeled each product's journey as an FSM with states like `BARCODE_READ`, `GATE1_CONTROL`, and `WEIGHT_SENSOR`. State transitions were precisely managed by FreeRTOS timers, calculated based on conveyor speed and sensor distances.</p>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">3. Resource Management</h3>
+                                <p>To handle up to 10 concurrent products safely, I used shared memory for inter-core data transfer, protected by a mutex. Semaphores were used to ensure thread-safe access to individual product data during state transitions.</p>
+                            </div>
+                             <div>
+                                <h3 class="text-xl font-bold text-gray-900">4. Proactive Speed Monitoring</h3>
+                                <p>As an innovative addition, I implemented a dedicated task to monitor conveyor speeds. It calculates actual travel times and issues warnings if deviations exceed 15%, enabling early detection of mechanical faults.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 md:mt-0">
+                        <figure class="flex flex-col items-center">
+                            <img src="taskdistribution.jpg" alt="Task Distribution Flowchart" class="rounded-lg shadow-lg border border-gray-200 transition-transform hover:scale-105 duration-300 w-full max-w-sm">
+                            <figcaption class="text-center text-sm mt-3 text-gray-500">My dual-core task distribution architecture.</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Result -->
+            <div class="card reveal">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Result</h2>
+                <p class="text-lg mb-6">The system successfully met all functional and performance objectives. Rigorous testing confirmed its stability and accuracy under high-load conditions.</p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200"><strong class="text-xl accent-text block">100% Processing Accuracy</strong><p>The system correctly accepted all compliant products and rejected all non-compliant ones based on precise length (4.8-5.2 cm) and weight (95-105 g) checks.</p></div>
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200"><strong class="text-xl accent-text block">Stable Concurrent Operation</strong><p>Successfully handled high-load scenarios with up to 10 concurrent products without crashes, memory leaks, or queue overflows, maintaining a stable free heap of ~287 kB.</p></div>
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200"><strong class="text-xl accent-text block">Real-Time Determinism</strong><p>Timer-driven state transitions and task prioritization ensured all operations completed within the required timing constraints, even with a 450ms product introduction interval.</p></div>
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200"><strong class="text-xl accent-text block">Effective Fault Tolerance</strong><p>The non-blocking sensor retry mechanism and robust error logging maintained system responsiveness and aided in diagnostics without halting critical operations.</p></div>
+                </div>
+            </div>
+
+            <!-- Architectural Diagrams -->
+            <div class="card reveal">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Architectural Diagrams</h2>
+                <div class="grid md:grid-cols-2 gap-8 items-stretch">
+                    <figure class="flex flex-col items-center justify-center space-y-2">
+                        <img src="dataflowdiagram.jpg" alt="Data Flow Diagram" class="rounded-lg shadow-lg border border-gray-200 transition-transform hover:scale-105 duration-300">
+                        <figcaption class="text-center text-sm mt-3 text-gray-500">High-level data flow from sensor to output.</figcaption>
+                    </figure>
+                    <figure class="flex flex-col items-center justify-center space-y-2">
+                        <img src="resourcemanagementschematics.jpg" alt="Resource Management Schematics" class="rounded-lg shadow-lg border border-gray-200 transition-transform hover:scale-105 duration-300">
+                        <figcaption class="text-center text-sm mt-3 text-gray-500">Schematic of resource management with semaphores and queues.</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <!-- Lessons Learned -->
+            <div class="card reveal">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Key Learnings</h2>
+                <ul class="list-disc list-inside space-y-3 text-lg">
+                    <li>This project provided deep, hands-on experience in architecting complex real-time systems using an RTOS, highlighting the critical importance of task prioritization and resource synchronization (mutexes, semaphores).</li>
+                    <li>I learned that designing with a Finite State Machine is a powerful methodology for creating modular, maintainable, and predictable code for systems with complex, sequential operations.</li>
+                    <li>Implementing the proactive speed monitoring task taught me to think beyond the immediate requirements and add value through innovative diagnostic features that enhance overall system reliability.</li>
+                </ul>
+            </div>
+
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="text-center py-12 mt-20">
+        <a href="index.html" class="inline-block bg-white border border-gray-200 text-gray-700 px-8 py-3 rounded-full hover:bg-gray-50 hover:shadow-md transition-all">
+            &larr; Return to Main Portfolio
+        </a>
+    </footer>
+
+    <!-- JavaScript for Scroll Animations -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

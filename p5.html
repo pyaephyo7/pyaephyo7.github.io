@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Dossier: Supermarket Entrance Counter</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom Professional & Readable Styles (Light Theme) -->
+    <style>
+        :root {
+            --bg-main: #FFFFFF;      /* White background */
+            --bg-card: #F9FAFB;     /* Very light grey for cards */
+            --text-main: #374151;    /* Dark grey for body text (gray-700) */
+            --text-head: #111827;    /* Near-black for headings (gray-900) */
+            --accent: #059669;       /* A professional, darker green (emerald-600) for contrast */
+            --border-color: #E5E7EB; /* Light grey for borders (gray-200) */
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+        }
+
+        .section-title { @apply text-3xl sm:text-4xl font-bold text-gray-900 mb-4; }
+
+        .card {
+            @apply bg-white border border-gray-200/80 rounded-2xl transition-all duration-300 p-8 shadow-sm hover:shadow-xl hover:border-gray-300;
+        }
+        
+        .stat-card {
+            @apply bg-white border border-gray-200/80 rounded-2xl p-6 text-center transform transition-transform hover:-translate-y-2 hover:shadow-2xl;
+        }
+        .stat-value { 
+            color: var(--text-head);
+            @apply text-4xl font-extrabold; 
+        }
+        .stat-label { 
+            color: #6B7280; /* gray-500 */
+            @apply text-sm font-medium uppercase tracking-wider mt-1; 
+        }
+
+        .accent-text {
+            color: var(--accent);
+        }
+
+        /* Animation on scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Back Button -->
+    <a href="index.html" class="fixed top-6 left-6 z-50 flex items-center space-x-2 bg-white/80 backdrop-blur-lg border border-gray-200 text-gray-700 px-4 py-2 rounded-full hover:bg-gray-50 hover:shadow-md transition-all">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+        <span>Back to Portfolio</span>
+    </a>
+
+    <main class="container mx-auto px-6">
+
+        <!-- Project Header -->
+        <header class="text-center py-24 md:py-32">
+            <p class="accent-text font-semibold mb-2">Project Dossier</p>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-gray-900 leading-tight">
+                Supermarket Entrance Counter
+            </h1>
+            <p class="mt-6 text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
+                A digital logic circuit designed to detect and count people using an IR sensor and 7-segment displays.
+            </p>
+        </header>
+
+        <!-- Key Metrics Section -->
+        <section class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
+            <div class="stat-card reveal"><div class="flex justify-center mb-3"><svg class="w-8 h-8 accent-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25a8.967 8.967 0 00-6.364 2.636m12.728 0a8.967 8.967 0 01-6.364 2.636m6.364 0l-2.225 2.51m-2.225-2.51l2.225 2.51" /></svg></div><p class="stat-value">IR Sensor</p><p class="stat-label">Detection Method</p></div>
+            <div class="stat-card reveal" style="transition-delay: 100ms;"><div class="flex justify-center mb-3"><svg class="w-8 h-8 accent-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z" /></svg></div><p class="stat-value">74LS Series</p><p class="stat-label">Logic ICs</p></div>
+            <div class="stat-card reveal" style="transition-delay: 200ms;"><div class="flex justify-center mb-3"><svg class="w-8 h-8 accent-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" /></svg></div><p class="stat-value">0-99</p><p class="stat-label">Counting Range</p></div>
+            <div class="stat-card reveal" style="transition-delay: 300ms;"><div class="flex justify-center mb-3"><svg class="w-8 h-8 accent-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 7.125C2.25 6.504 2.754 6 3.375 6h6c.621 0 1.125.504 1.125 1.125v3.75c0 .621-.504 1.125-1.125 1.125h-6A1.125 1.125 0 012.25 9.875v-2.75zm0 9C2.25 15.504 2.754 15 3.375 15h6c.621 0 1.125.504 1.125 1.125v3.75c0 .621-.504 1.125-1.125 1.125h-6A1.125 1.125 0 012.25 18.875v-2.75zm12.75-9C15 6.504 15.504 6 16.125 6h6c.621 0 1.125.504 1.125 1.125v3.75c0 .621-.504 1.125-1.125 1.125h-6A1.125 1.125 0 0115 9.875v-2.75zm0 9c0-.621.504-1.125 1.125-1.125h6c.621 0 1.125.504 1.125 1.125v3.75c0 .621-.504 1.125-1.125 1.125h-6A1.125 1.125 0 0115 18.875v-2.75z" /></svg></div><p class="stat-value">Multisim</p><p class="stat-label">Simulation Tool</p></div>
+        </section>
+
+        <!-- Main Content using STAR Method -->
+        <div class="space-y-12">
+            
+            <!-- Situation & Task -->
+            <div class="card reveal">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Situation & Task</h2>
+                <p class="text-lg mb-4">Commercial spaces like supermarkets require an efficient method to track the number of people entering, both for business analytics and for managing occupancy. The task was to design and build a cost-effective electronic counter that could automatically detect a person passing through an entrance and display the count numerically, eliminating the need for manual counting.</p>
+                <h3 class="text-2xl font-bold text-gray-900 mt-6 mb-3">My Role & Responsibilities:</h3>
+                <p class="text-lg">I was the sole designer and engineer for this project. My responsibilities included designing the entire digital logic circuit, selecting the appropriate ICs and components, simulating the circuit's behavior in Multisim to verify its functionality, and building and testing a physical prototype on a breadboard.</p>
+            </div>
+
+            <!-- Action -->
+            <div class="card reveal">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4">Action</h2>
+                        <p class="text-lg mb-6">I designed the system using fundamental electronic principles and components:</p>
+                        <div class="space-y-6 border-l-2 pl-6" style="border-color: var(--border-color);">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">1. Sensor & Comparator Circuit</h3>
+                                <p>I used an IR transmitter and photodiode pair as the motion sensor. When the beam is broken, the change in voltage is fed into an LM358 op-amp configured as a comparator. This produces a clean digital pulse for the counting logic.</p>
+                            </div>
+                             <div>
+                                <h3 class="text-xl font-bold text-gray-900">2. Digital Counting Logic</h3>
+                                <p>The pulse from the comparator clocks two cascaded 74LS90 decade counters. The first counter handles the "ones" digit, and its output clocks the second counter for the "tens" digit, allowing the system to count from 0 to 99.</p>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">3. Display Driver Circuit</h3>
+                                <p>The Binary-Coded Decimal (BCD) output from each 74LS90 counter was fed into a corresponding 74LS47 BCD-to-7-segment driver. This IC translates the binary count into the correct pattern to illuminate the segments of the two 7-segment LED displays.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 md:mt-0">
+                        <figure class="flex flex-col items-center">
+                            <img src="p5cd.jpg" alt="Entrance Counter Circuit Diagram" class="rounded-lg shadow-lg border border-gray-200 transition-transform hover:scale-105 duration-300 w-full">
+                            <figcaption class="text-center text-sm mt-3 text-gray-500">The complete circuit diagram designed in Multisim.</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Result -->
+            <div class="card reveal">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Result</h2>
+                <p class="text-lg mb-6">The project was a success, resulting in a functional prototype that accurately counted objects passing through its sensor range. The design was validated both in simulation and through physical testing.</p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200"><strong class="text-xl accent-text block">Accurate Counting</strong><p>The final breadboard prototype reliably detected interruptions of the IR beam and incremented the 7-segment displays correctly from 0 to 99.</p></div>
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200"><strong class="text-xl accent-text block">Successful Simulation & Build</strong><p>The physical circuit's performance matched the successful simulations conducted in Multisim, demonstrating a solid translation from design to a working hardware prototype.</p></div>
+                </div>
+            </div>
+
+            <!-- Architectural Diagrams -->
+            <div class="card reveal">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">System Diagrams & Prototype</h2>
+                <div class="grid md:grid-cols-2 gap-8 items-stretch">
+                    <figure class="flex flex-col items-center justify-center space-y-2">
+                        <img src="p5simulation.jpg" alt="Block Diagram" class="rounded-lg shadow-lg border border-gray-200 transition-transform hover:scale-105 duration-300">
+                        <figcaption class="text-center text-sm mt-3 text-gray-500">Simulaton of the system in Multisim.</figcaption>
+                    </figure>
+                    <figure class="flex flex-col items-center justify-center space-y-2">
+                        <img src="p5proto.jpg" alt="Working Prototype" class="rounded-lg shadow-lg border border-gray-200 transition-transform hover:scale-105 duration-300">
+                        <figcaption class="text-center text-sm mt-3 text-gray-500">The final working prototype on a breadboard.</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <!-- Lessons Learned -->
+            <div class="card reveal">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Key Learnings</h2>
+                <ul class="list-disc list-inside space-y-3 text-lg">
+                    <li>This project provided practical, hands-on experience with fundamental digital logic ICs, such as counters and display drivers, reinforcing theoretical knowledge.</li>
+                    <li>I learned the importance of analog-to-digital signal conditioning by using an op-amp comparator to convert the analog sensor reading into a clean clock pulse suitable for digital logic.</li>
+                    <li>I gained valuable experience in translating a circuit from a simulation environment (Multisim) to a physical breadboard prototype, including troubleshooting real-world issues that don't appear in simulation.</li>
+                </ul>
+            </div>
+
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="text-center py-12 mt-20">
+        <a href="index.html" class="inline-block bg-white border border-gray-200 text-gray-700 px-8 py-3 rounded-full hover:bg-gray-50 hover:shadow-md transition-all">
+            &larr; Return to Main Portfolio
+        </a>
+    </footer>
+
+    <!-- JavaScript for Scroll Animations -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

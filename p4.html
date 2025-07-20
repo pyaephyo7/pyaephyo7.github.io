@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Dossier: Smart Fish Tank System</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom Professional & Readable Styles (Light Theme) -->
+    <style>
+        :root {
+            --bg-main: #FFFFFF;      /* White background */
+            --bg-card: #F9FAFB;     /* Very light grey for cards */
+            --text-main: #374151;    /* Dark grey for body text (gray-700) */
+            --text-head: #111827;    /* Near-black for headings (gray-900) */
+            --accent: #059669;       /* A professional, darker green (emerald-600) for contrast */
+            --border-color: #E5E7EB; /* Light grey for borders (gray-200) */
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+        }
+
+        .section-title { @apply text-3xl sm:text-4xl font-bold text-gray-900 mb-4; }
+
+        .card {
+            @apply bg-white border border-gray-200/80 rounded-2xl transition-all duration-300 p-8 shadow-sm hover:shadow-xl hover:border-gray-300;
+        }
+        
+        .stat-card {
+            @apply bg-white border border-gray-200/80 rounded-2xl p-6 text-center transform transition-transform hover:-translate-y-2 hover:shadow-2xl;
+        }
+        .stat-value { 
+            color: var(--text-head);
+            @apply text-4xl font-extrabold; 
+        }
+        .stat-label { 
+            color: #6B7280; /* gray-500 */
+            @apply text-sm font-medium uppercase tracking-wider mt-1; 
+        }
+
+        .accent-text {
+            color: var(--accent);
+        }
+
+        /* Animation on scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Back Button -->
+    <a href="index.html" class="fixed top-6 left-6 z-50 flex items-center space-x-2 bg-white/80 backdrop-blur-lg border border-gray-200 text-gray-700 px-4 py-2 rounded-full hover:bg-gray-50 hover:shadow-md transition-all">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+        <span>Back to Portfolio</span>
+    </a>
+
+    <main class="container mx-auto px-6">
+
+        <!-- Project Header -->
+        <header class="text-center py-24 md:py-32">
+            <p class="accent-text font-semibold mb-2">Project Dossier</p>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-gray-900 leading-tight">
+                Smart Fish Tank System
+            </h1>
+            <p class="mt-6 text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
+                An IoT-based system for the automated monitoring and control of an aquatic environment using an ESP8266 and the Blynk platform.
+            </p>
+        </header>
+
+        <!-- Key Metrics Section -->
+        <section class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
+            <div class="stat-card reveal"><div class="flex justify-center mb-3"><svg class="w-8 h-8 accent-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" /></svg></div><p class="stat-value">ESP8266</p><p class="stat-label">Platform</p></div>
+            <div class="stat-card reveal" style="transition-delay: 100ms;"><div class="flex justify-center mb-3"><svg class="w-8 h-8 accent-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" /></svg></div><p class="stat-value">Blynk</p><p class="stat-label">IoT Platform</p></div>
+            <div class="stat-card reveal" style="transition-delay: 200ms;"><div class="flex justify-center mb-3"><svg class="w-8 h-8 accent-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" /></svg></div><p class="stat-value">Arduino C++</p><p class="stat-label">Language</p></div>
+            <div class="stat-card reveal" style="transition-delay: 300ms;"><div class="flex justify-center mb-3"><svg class="w-8 h-8 accent-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z" /></svg></div><p class="stat-value">5+ Sensors</p><p class="stat-label">Integrated Hardware</p></div>
+        </section>
+
+        <!-- Main Content using STAR Method -->
+        <div class="space-y-12">
+            
+            <!-- Situation & Task -->
+            <div class="card reveal">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Situation & Task</h2>
+                <p class="text-lg mb-4">Maintaining a stable aquatic environment in a fish tank requires constant monitoring and manual intervention for tasks like feeding, temperature regulation, and water changes. The objective of this project was to design and build a cost-effective, automated "Smart Fish Tank" that could perform these tasks autonomously and provide remote monitoring capabilities to the user via the Internet of Things (IoT).</p>
+                <h3 class="text-2xl font-bold text-gray-900 mt-6 mb-3">My Role & Responsibilities:</h3>
+                <p class="text-lg">As the project lead, I was responsible for the entire development process. This included selecting all electronic components, designing the complete circuit, programming the ESP8266 microcontroller in the Arduino IDE, developing the IoT dashboard on the Blynk platform, and assembling and testing the physical prototype.</p>
+            </div>
+
+            <!-- Action -->
+            <div class="card reveal">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4">Action</h2>
+                        <p class="text-lg mb-6">I developed a multi-faceted system by integrating various hardware and software components:</p>
+                        <div class="space-y-6 border-l-2 pl-6" style="border-color: var(--border-color);">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">1. Hardware Integration</h3>
+                                <p>I selected and interfaced a suite of sensors with the ESP8266 NodeMCU, including a DS18B20 waterproof temperature sensor, a water level sensor, a PIR sensor for fish motion, and an ultrasonic sensor to monitor the food level in the automated feeder.</p>
+                            </div>
+                             <div>
+                                <h3 class="text-xl font-bold text-gray-900">2. Actuator Control</h3>
+                                <p>I implemented control logic for multiple actuators: an L298N motor driver to power air and water pumps, a servo motor for the automated feeder mechanism, and a relay module to control the lighting system based on a real-time clock (RTC).</p>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">3. IoT Dashboard Development</h3>
+                                <p>Using the built-in Wi-Fi capabilities of the ESP8266, I connected the system to the Blynk cloud platform. I designed a custom dashboard, accessible via web and mobile, to display real-time data (temperature, water level, etc.) and the status of all pumps and feeders.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 md:mt-0">
+                        <figure class="flex flex-col items-center">
+                            <!-- TODO: Replace with your circuit diagram image -->
+                            <img src="fishtankcircuitdiagram.jpg" alt="Smart Fish Tank Circuit Diagram" class="rounded-lg shadow-lg border border-gray-200 transition-transform hover:scale-105 duration-300 w-full">
+                            <figcaption class="text-center text-sm mt-3 text-gray-500">The complete circuit diagram for the system.</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Result -->
+            <div class="card reveal">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Result</h2>
+                <p class="text-lg mb-6">The project successfully resulted in a fully functional prototype that automated all core aspects of aquarium maintenance and provided robust remote monitoring.</p>
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200"><strong class="text-xl accent-text block">Full Automation Achieved</strong><p>The system successfully controlled water temperature within the optimal 23-27°C range, automatically topped up the water level, and dispensed food on a schedule (6 am and 5 pm).</p></div>
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200"><strong class="text-xl accent-text block">Remote Monitoring & Alerts</strong><p>The Blynk dashboard provided real-time visibility of all system parameters. The system was also programmed to send notifications and emails if no fish motion was detected, alerting the user to potential issues.</p></div>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">System Interface & Prototype</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <figure class="flex flex-col items-center space-y-2">
+                        <!-- TODO: Replace with a photo of your physical prototype -->
+                        <img src="fishtank.jpg" alt="Physical prototype of the Smart Fish Tank" class="rounded-lg border border-gray-200 transition-transform hover:scale-105 duration-300">
+                        <figcaption class="text-sm text-gray-500">The assembled breadboard prototype in operation.</figcaption>
+                    </figure>
+                    <figure class="flex flex-col items-center space-y-2">
+                        <!-- TODO: Replace with a photo of your physical prototype -->
+                        <img src="fishtankblock.jpg" alt="Physical prototype of the Smart Fish Tank" class="rounded-lg border border-gray-200 transition-transform hover:scale-105 duration-300">
+                        <figcaption class="text-sm text-gray-500">System Block Diagram.</figcaption>
+                    </figure>
+                    <figure class="flex flex-col items-center space-y-2">
+                        <!-- TODO: Replace with a photo of your physical prototype -->
+                        <img src="websiteui.png" alt="Physical prototype of the Smart Fish Tank" class="rounded-lg border border-gray-200 transition-transform hover:scale-105 duration-300">
+                        <figcaption class="text-sm text-gray-500">The custom website dashboard for remote monitoring.</figcaption>
+                    </figure>
+                    <figure class="flex flex-col items-center space-y-2">
+                        <!-- TODO: Replace with your Blynk dashboard screenshot -->
+                        <img src="mobileui.jpg" alt="Blynk Mobile Dashboard" class="rounded-lg border border-gray-200 transition-transform hover:scale-105 duration-300">
+                        <figcaption class="text-sm text-gray-500">The custom mobile dashboard for remote monitoring.</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <!-- Lessons Learned -->
+            <div class="card reveal">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Key Learnings</h2>
+                <ul class="list-disc list-inside space-y-3 text-lg">
+                    <li>This project provided extensive hands-on experience in interfacing a variety of sensors and actuators with a microcontroller, including managing different signal types (analog, digital, I2C, 1-Wire).</li>
+                    <li>I gained practical skills in IoT development, from establishing reliable Wi-Fi communication to designing a user-friendly cloud dashboard for data visualization and system control.</li>
+                    <li>I learned to overcome real-world hardware challenges, such as waterproofing sensors for aquatic use and implementing a voltage-dropping circuit with diodes to safely power a lower-voltage air pump.</li>
+                </ul>
+            </div>
+
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="text-center py-12 mt-20">
+        <a href="index.html" class="inline-block bg-white border border-gray-200 text-gray-700 px-8 py-3 rounded-full hover:bg-gray-50 hover:shadow-md transition-all">
+            &larr; Return to Main Portfolio
+        </a>
+    </footer>
+
+    <!-- JavaScript for Scroll Animations -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
+

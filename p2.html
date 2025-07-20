@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Dossier: Wind Turbine Power Prediction</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom Professional & Readable Styles (Light Theme) -->
+    <style>
+        :root {
+            --bg-main: #FFFFFF;      /* White background */
+            --bg-card: #F9FAFB;     /* Very light grey for cards */
+            --text-main: #374151;    /* Dark grey for body text (gray-700) */
+            --text-head: #111827;    /* Near-black for headings (gray-900) */
+            --accent: #059669;       /* A professional, darker green (emerald-600) */
+            --border-color: #E5E7EB; /* Light grey for borders (gray-200) */
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+        }
+
+        .section-title { @apply text-3xl sm:text-4xl font-bold text-gray-900 mb-4; }
+
+        .card {
+            @apply bg-white border border-gray-200/80 rounded-2xl transition-all duration-300 p-8 shadow-sm hover:shadow-xl hover:border-gray-300;
+        }
+        
+        .stat-card {
+            @apply bg-white border border-gray-200/80 rounded-2xl p-6 text-center transform transition-transform hover:-translate-y-2 hover:shadow-2xl;
+        }
+        .stat-value { 
+            color: var(--text-head);
+            @apply text-4xl font-extrabold; 
+        }
+        .stat-label { 
+            color: #6B7280; /* gray-500 */
+            @apply text-sm font-medium uppercase tracking-wider mt-1; 
+        }
+
+        .accent-text {
+            color: var(--accent);
+        }
+
+        /* Animation on scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Back Button -->
+    <a href="index.html" class="fixed top-6 left-6 z-50 flex items-center space-x-2 bg-white/80 backdrop-blur-lg border border-gray-200 text-gray-700 px-4 py-2 rounded-full hover:bg-gray-50 hover:shadow-md transition-all">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+        <span>Back to Portfolio</span>
+    </a>
+
+    <main class="container mx-auto px-6">
+
+        <!-- Project Header -->
+        <header class="text-center py-24 md:py-32">
+            <p class="accent-text font-semibold mb-2">Project Dossier</p>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-gray-900 leading-tight">
+                Wind Turbine Power Prediction
+            </h1>
+            <p class="mt-6 text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
+                An investigation into machine learning techniques for accurately forecasting wind power generation from meteorological data.
+            </p>
+        </header>
+
+        <!-- Key Metrics Section -->
+        <section class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
+            <div class="stat-card reveal"><div class="flex justify-center mb-3"><svg class="w-8 h-8 accent-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v18h18" /><path stroke-linecap="round" stroke-linejoin="round" d="M18.75 18.75L15 15l-3.75 3.75L9 12l-3.75 3.75" /></svg></div><p class="stat-value">Random Forest</p><p class="stat-label">Best Performing Model</p></div>
+            <div class="stat-card reveal" style="transition-delay: 100ms;"><div class="flex justify-center mb-3"><svg class="w-8 h-8 accent-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" /></svg></div><p class="stat-value">0.5549</p><p class="stat-label">R² Score</p></div>
+            <div class="stat-card reveal" style="transition-delay: 200ms;"><div class="flex justify-center mb-3"><svg class="w-8 h-8 accent-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg></div><p class="stat-value">WS_100m</p><p class="stat-label">Key Predictive Feature</p></div>
+            <div class="stat-card reveal" style="transition-delay: 300ms;"><div class="flex justify-center mb-3"><svg class="w-8 h-8 accent-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" /></svg></div><p class="stat-value">Python</p><p class="stat-label">Primary Tool</p></div>
+        </section>
+
+        <!-- Main Content using STAR Method -->
+        <div class="space-y-12">
+            
+            <!-- Situation & Task -->
+            <div class="card reveal">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Situation & Task</h2>
+                <p class="text-lg mb-4">The inherent variability of wind makes forecasting power generation a significant challenge for grid stability and energy security. The objective of this study was to leverage machine learning to create a predictive model that could accurately forecast wind turbine power output using historical meteorological data.</p>
+                <h3 class="text-2xl font-bold text-gray-900 mt-6 mb-3">My Role & Responsibilities:</h3>
+                <p class="text-lg">I led this research project, handling all aspects from data acquisition to final analysis. My responsibilities included performing exploratory data analysis (EDA), selecting and implementing appropriate machine learning models, conducting feature engineering and hyperparameter tuning, and critically evaluating the performance of each model to identify the most effective forecasting solution.</p>
+            </div>
+
+            <!-- Action -->
+            <div class="card reveal">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Action</h2>
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <p class="text-lg mb-6">I followed a structured data science workflow to develop the predictive models:</p>
+                        <div class="space-y-6 border-l-2 pl-6" style="border-color: var(--border-color);">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">1. Data Analysis & Preprocessing</h3>
+                                <p>I began with an in-depth exploratory data analysis (EDA) of hourly weather and power data from 2013-2016. Using visualizations like heatmaps and scatter plots, I identified key relationships. The data was then cleaned and normalized using `MinMaxScaler` to prepare it for modeling.</p>
+                            </div>
+                             <div>
+                                <h3 class="text-xl font-bold text-gray-900">2. Model Selection & Training</h3>
+                                <p>I selected three regression models for comparison: Linear Regression (as a baseline), Decision Tree, and a more complex Random Forest model. The dataset was split 80/20 for training and validation.</p>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">3. Feature Engineering & Tuning</h3>
+                                <p>Feature importance analysis revealed that wind speed at 100m (`WS_100m`) was the most dominant predictor. I used Grid Search for hyperparameter tuning to optimize the Decision Tree and Random Forest models, focusing on parameters like tree depth and sample splits to prevent overfitting.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 md:mt-0">
+                        <img src="featureimportance.jpg" alt="Feature Importance Graph" class="rounded-lg shadow-lg border border-gray-200 transition-transform hover:scale-105 duration-300">
+                        <p class="text-center text-sm mt-3 text-gray-500">Feature importance analysis from the Random Forest model.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Result -->
+            <div class="card reveal">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Result</h2>
+                <p class="text-lg mb-6">The study successfully demonstrated that machine learning can significantly improve the accuracy of wind power forecasting. The Random Forest model emerged as the superior solution.</p>
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200"><strong class="text-xl accent-text block">Superior Predictive Accuracy</strong><p>The Random Forest model achieved the highest R² score of 0.5549, outperforming both the Decision Tree (0.5157) and the Linear Regression baseline (0.4654).</p></div>
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200"><strong class="text-xl accent-text block">Identified Key Predictor</strong><p>The analysis definitively confirmed that wind speed at 100m (`WS_100m`) is the most critical variable for predicting power output, accounting for 78% of the model's predictions.</p></div>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Model Performance Overview</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <figure class="flex flex-col items-center space-y-2">
+                        <img src="correlationheatmap.jpg" alt="Correlation Heatmap" class="rounded-lg border border-gray-200 transition-transform hover:scale-105 duration-300">
+                        <figcaption class="text-sm text-gray-500">Correlation heatmap of meteorological variables vs. power output.</figcaption>
+                    </figure>
+                    <figure class="flex flex-col items-center space-y-2">
+                        <img src="scatterplot.jpg" alt="Scatter Plot of Wind Speed vs Power Output" class="rounded-lg border border-gray-200 transition-transform hover:scale-105 duration-300">
+                        <figcaption class="text-sm text-gray-500">Scatter plot showing the strong relationship between wind speed and power.</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <!-- Lessons Learned -->
+            <div class="card reveal">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Key Learnings</h2>
+                <ul class="list-disc list-inside space-y-3 text-lg">
+                    <li>This project underscored the power of ensemble methods like Random Forest to capture complex, non-linear relationships in environmental data where simpler models fall short.</li>
+                    <li>I learned that rigorous feature selection is as crucial as model selection; identifying the dominant predictor (`WS_100m`) was key to achieving high accuracy.</li>
+                    <li>The study highlighted the trade-off between model complexity and interpretability, providing valuable experience in selecting the right tool for a specific engineering problem. Future work could explore neural networks for even greater accuracy.</li>
+                </ul>
+            </div>
+
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="text-center py-12 mt-20">
+        <a href="index.html" class="inline-block bg-white border border-gray-200 text-gray-700 px-8 py-3 rounded-full hover:bg-gray-50 hover:shadow-md transition-all">
+            &larr; Return to Main Portfolio
+        </a>
+    </footer>
+
+    <!-- JavaScript for Scroll Animations -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

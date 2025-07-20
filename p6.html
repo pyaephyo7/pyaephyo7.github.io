@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Dossier: Sensitive Intruder Alarm</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom Professional & Readable Styles (Light Theme) -->
+    <style>
+        :root {
+            --bg-main: #FFFFFF;      /* White background */
+            --bg-card: #F9FAFB;     /* Very light grey for cards */
+            --text-main: #374151;    /* Dark grey for body text (gray-700) */
+            --text-head: #111827;    /* Near-black for headings (gray-900) */
+            --accent: #059669;       /* A professional, darker green (emerald-600) for contrast */
+            --border-color: #E5E7EB; /* Light grey for borders (gray-200) */
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+        }
+
+        .section-title { @apply text-3xl sm:text-4xl font-bold text-gray-900 mb-4; }
+
+        .card {
+            @apply bg-white border border-gray-200/80 rounded-2xl transition-all duration-300 p-8 shadow-sm hover:shadow-xl hover:border-gray-300;
+        }
+        
+        .stat-card {
+            @apply bg-white border border-gray-200/80 rounded-2xl p-6 text-center transform transition-transform hover:-translate-y-2 hover:shadow-2xl;
+        }
+        .stat-value { 
+            color: var(--text-head);
+            @apply text-4xl font-extrabold; 
+        }
+        .stat-label { 
+            color: #6B7280; /* gray-500 */
+            @apply text-sm font-medium uppercase tracking-wider mt-1; 
+        }
+
+        .accent-text {
+            color: var(--accent);
+        }
+
+        /* Animation on scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Back Button -->
+    <a href="index.html" class="fixed top-6 left-6 z-50 flex items-center space-x-2 bg-white/80 backdrop-blur-lg border border-gray-200 text-gray-700 px-4 py-2 rounded-full hover:bg-gray-50 hover:shadow-md transition-all">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+        <span>Back to Portfolio</span>
+    </a>
+
+    <main class="container mx-auto px-6">
+
+        <!-- Project Header -->
+        <header class="text-center py-24 md:py-32">
+            <p class="accent-text font-semibold mb-2">Project Dossier</p>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-gray-900 leading-tight">
+                Sensitive Intruder Alarm
+            </h1>
+            <p class="mt-6 text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
+                An analog electronics project designed to detect motion using an IR sensor and trigger an audible alarm.
+            </p>
+        </header>
+
+        <!-- Key Metrics Section -->
+        <section class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
+            <div class="stat-card reveal"><div class="flex justify-center mb-3"><svg class="w-8 h-8 accent-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25a8.967 8.967 0 00-6.364 2.636m12.728 0a8.967 8.967 0 01-6.364 2.636m6.364 0l-2.225 2.51m-2.225-2.51l2.225 2.51" /></svg></div><p class="stat-value">IR Sensor</p><p class="stat-label">Detection Method</p></div>
+            <div class="stat-card reveal" style="transition-delay: 100ms;"><div class="flex justify-center mb-3"><svg class="w-8 h-8 accent-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z" /></svg></div><p class="stat-value">LM358</p><p class="stat-label">Op-Amp Comparator</p></div>
+            <div class="stat-card reveal" style="transition-delay: 200ms;"><div class="flex justify-center mb-3"><svg class="w-8 h-8 accent-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" /></svg></div><p class="stat-value">NE555</p><p class="stat-label">Timer IC</p></div>
+            <div class="stat-card reveal" style="transition-delay: 300ms;"><div class="flex justify-center mb-3"><svg class="w-8 h-8 accent-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l9 7.5" /></svg></div><p class="stat-value">Buzzer</p><p class="stat-label">Audible Alarm</p></div>
+        </section>
+
+        <!-- Main Content using STAR Method -->
+        <div class="space-y-12">
+            
+            <!-- Situation & Task -->
+            <div class="card reveal">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Situation & Task</h2>
+                <p class="text-lg mb-4">Creating a simple, reliable, and cost-effective security system is a common electronics challenge. The objective of this project was to design and build a sensitive intruder alarm from basic analog components that could detect movement and provide an immediate, audible notification without the need for a microcontroller.</p>
+                <h3 class="text-2xl font-bold text-gray-900 mt-6 mb-3">My Role & Responsibilities:</h3>
+                <p class="text-lg">I was the sole designer and engineer for this project. My responsibilities included designing the complete analog circuit, selecting the appropriate ICs and passive components, creating the circuit diagram, and building and testing the physical prototype on a breadboard, including waveform analysis with an oscilloscope.</p>
+            </div>
+
+            <!-- Action -->
+            <div class="card reveal">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Action</h2>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <p class="text-lg mb-6">I designed a multi-stage analog circuit to process the sensor signal and trigger the alarm:</p>
+                        <div class="space-y-6 border-l-2 pl-6" style="border-color: var(--border-color);">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">1. IR Sensor Detection</h3>
+                                <p>An IR sensor module was used as the primary motion detector. When an object obstructs the sensor, its digital output pin goes from HIGH to LOW.</p>
+                            </div>
+                             <div>
+                                <h3 class="text-xl font-bold text-gray-900">2. Signal Inversion & Comparison</h3>
+                                <p>The LOW signal from the sensor is fed into an LM358 op-amp. I configured the LM358 as a comparator to compare the sensor's output to a reference voltage. This stage cleans the signal and produces a reliable HIGH output when an intruder is detected.</p>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">3. Alarm Generation with 555 Timer</h3>
+                                <p>The HIGH output from the LM358 triggers the reset pin of an NE555 timer IC. I configured the 555 timer in an astable multivibrator mode, which generates a continuous square wave. This wave drives a buzzer, producing a loud, audible alarm tone.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 md:mt-0">
+                        <figure class="flex flex-col items-center">
+                            <!-- TODO: Replace with your circuit diagram image -->
+                            <img src="p6cd.jpg" alt="Intruder Alarm Circuit Diagram" class="rounded-lg shadow-lg border border-gray-200 transition-transform hover:scale-105 duration-300 w-full">
+                            <figcaption class="text-center text-sm mt-3 text-gray-500">The complete circuit diagram for the alarm system.</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Result -->
+            <div class="card reveal">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Result</h2>
+                <p class="text-lg mb-6">The project resulted in a fully functional and highly responsive intruder alarm prototype. The circuit performed exactly as designed, demonstrating a successful application of analog electronics principles.</p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200"><strong class="text-xl accent-text block">Reliable Detection</strong><p>The final breadboard prototype successfully and instantly triggered the buzzer and an indicator LED whenever an object was detected by the IR sensor.</p></div>
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200"><strong class="text-xl accent-text block">Waveform Validation</strong><p>Using an oscilloscope, I verified that the NE555 timer was producing the correct square wave frequency as calculated, confirming the astable circuit was operating correctly.</p></div>
+                </div>
+            </div>
+
+            <!-- Prototype Images -->
+            <div class="card reveal">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">System Prototype & Testing</h2>
+                <div class="grid md:grid-cols-2 gap-8 items-stretch">
+                    <figure class="flex flex-col items-center justify-center space-y-2">
+                        <!-- TODO: Replace with your prototype photo -->
+                        <img src="p6pro.jpg" alt="Working Prototype" class="rounded-lg shadow-lg border border-gray-200 transition-transform hover:scale-105 duration-300">
+                        <figcaption class="text-center text-sm mt-3 text-gray-500">The assembled prototype on a breadboard.</figcaption>
+                    </figure>
+                    <figure class="flex flex-col items-center justify-center space-y-2">
+                        <!-- TODO: Replace with your oscilloscope photo -->
+                        <img src="p6protoosc.jpg" alt="Oscilloscope Testing" class="rounded-lg shadow-lg border border-gray-200 transition-transform hover:scale-105 duration-300">
+                        <figcaption class="text-center text-sm mt-3 text-gray-500">Validating the 555 timer's output waveform.</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <!-- Lessons Learned -->
+            <div class="card reveal">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Key Learnings</h2>
+                <ul class="list-disc list-inside space-y-3 text-lg">
+                    <li>This project solidified my understanding of fundamental analog components, particularly the practical application of an LM358 op-amp as a comparator and the NE555 timer in astable mode.</li>
+                    <li>I gained valuable hands-on experience in breadboard prototyping, which involves careful component placement and wiring to minimize noise and ensure a stable circuit.</li>
+                    <li>Using an oscilloscope to test and debug the circuit was a key learning experience, reinforcing the importance of using proper test equipment to validate that a physical circuit's performance matches theoretical calculations.</li>
+                </ul>
+            </div>
+
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="text-center py-12 mt-20">
+        <a href="index.html" class="inline-block bg-white border border-gray-200 text-gray-700 px-8 py-3 rounded-full hover:bg-gray-50 hover:shadow-md transition-all">
+            &larr; Return to Main Portfolio
+        </a>
+    </footer>
+
+    <!-- JavaScript for Scroll Animations -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
